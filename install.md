@@ -4,13 +4,7 @@ Setting up a Python development environment for data science -- some opinionated
 
 There are many ways to set things up. These are my choices along with some references.
 
-## 1. Install vscode
-
-This is a visual text editor (for starters) and an IDE (integrated dev environment) with some configuration
-
-* https://code.visualstudio.com/download
-
-## 2. Install miniconda
+## 1. Install miniconda
 
 Install miniconda on some version of Linux.
 
@@ -21,6 +15,12 @@ Install miniconda on some version of Linux.
 * If you have Mac or you're using Linux on a PC then you're in good shape.
 * If you're using Windows, then consider first installing WSL, Windows Subsystem for Linux (see below).
 * Ref: [miniconda](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html)
+
+## 2. Install vscode
+
+This is a visual text editor (for starters) and an IDE (integrated dev environment) with some configuration
+
+* https://code.visualstudio.com/download
 
 ## Why miniconda?
 
@@ -39,6 +39,8 @@ Install miniconda on some version of Linux.
 * [conda and pip](https://www.anaconda.com/blog/understanding-conda-and-pip) -- anaconda.com
 
 ## conda basics
+
+You can use conda to create multiple environments with various installed libraries.
 
 * create a new environment called "myenv" and install the latest seaborn and friends from conda-forge
 ```
