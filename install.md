@@ -1,4 +1,4 @@
-# conda
+# install
 
 Instructions to set up a Python development environment for data science -- some opinionated recommendations
 
