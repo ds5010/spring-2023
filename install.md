@@ -38,6 +38,29 @@ This is a visual text editor (for starters) and an IDE (integrated dev environme
 * [managing conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) -- conda.io
 * [conda and pip](https://www.anaconda.com/blog/understanding-conda-and-pip) -- anaconda.com
 
+## create an environment
+
+Create an environment with a specific version of python
+```
+conda create -n myenv python=3.9
+```
+Activate the environment and verify
+```
+conda activate myenv
+python --version
+```
+
+* [Manage environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) -- conda.io
+  * [Creating an environment with commands](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands)
+
+## remove an environment
+
+```
+conda remove --name myenv --all
+```
+
+* [Remove an environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#removing-an-environment) -- conda.io
+
 ## conda basics
 
 You can use conda to create multiple environments with various installed libraries.
@@ -45,6 +68,7 @@ You can use conda to create multiple environments with various installed librari
 * create a new environment called "myenv" and install the latest seaborn and friends from conda-forge
 ```
 conda create --name myenv
+conda activate myenv
 conda install -c conda-forge seaborn
 conda install -c conda-forge python
 conda install -c conda-forge pandas
@@ -110,7 +134,7 @@ Detailed instructions for installing WSL and some other useful things...
   * Use the directions for [Installing on Linux](https://docs.conda.io/projects/conda/en/stable/user-guide/install/linux.html)
   * Download the miniconda installer
     * Go to: https://docs.conda.io/en/latest/miniconda.html
-    * Download the installer for your architecture (I used the nonstandard "Miniconda Linux-aarch64 64-bit")
+    * Download the installer for your architecture (I had to use the nonstandard "Miniconda Linux-aarch64 64-bit")
     * The browser will download the file to your windows C drive
 * Where's the C drive?
   * The C drive is available in Linux as `/mnt/c`
@@ -123,12 +147,13 @@ Detailed instructions for installing WSL and some other useful things...
   ```
   bash /mnt/c/Documents\ and\ Settings/your.name/Downloads/Miniconda3-latest-Linux-X86_64.sh
   ```
+  * Be patient! Don't just hit return or you may respond incorrectly to the prompts...
   * Follow the instructions and accept all the defaults, including default activation
   * When it's done, you can verify that you have python with...
   ```
   which python
   ```
-  which should return something like `/home/yourname/miniconda3/bin/python`
+  this command should return something like `/home/yourname/miniconda3/bin/python`
   * Verify that it works with
   ```
   python --version
