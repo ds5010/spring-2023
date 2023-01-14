@@ -110,7 +110,7 @@ Detailed instructions for installing WSL and some other useful things...
   * Use the directions for [Installing on Linux](https://docs.conda.io/projects/conda/en/stable/user-guide/install/linux.html)
   * Download the miniconda installer
     * Go to: https://docs.conda.io/en/latest/miniconda.html
-    * Download the installer for "Miniconda Linux-aarch64 64-bit"
+    * Download the installer for your architecture (I used the nonstandard "Miniconda Linux-aarch64 64-bit")
     * The browser will download the file to your windows C drive
 * Where's the C drive?
   * The C drive is available in Linux as `/mnt/c`
