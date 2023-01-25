@@ -11,6 +11,10 @@
 * Polleverywhere: https://PollEv.com/pbogden
 * [Scratch notebook](https://colab.research.google.com/drive/1CIJAMn73A8ZvxzCgyjN7MGXT0W2BqUTq)
 
+## Assignment
+
+* Check Canvas -- due 31 Jan
+
 ## Continued from last time
 
 * 03-penguins-exercises
