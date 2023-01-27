@@ -16,6 +16,7 @@
 * Check Canvas -- due 31 Jan
 * For 31 Jan -- complete the quakes assignment (below) and migrate the code to the github-classroom repo.
 * Follow the instructions and use the format described in the repo.
+* Use this [git-intro](https://github.com/ds5110/git-intro) as guidance for organizing your own.
 
 ## Continued from last time
 
