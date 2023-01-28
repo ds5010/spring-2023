@@ -34,4 +34,4 @@ Verify that students have basic requirements (python, conda, git) as specified i
 
 ## In-class exercise: penguins
 
-* [02-penguins-exercises.ipynb](https://colab.research.google.com/drive/1gaYfU1vXAFC5gNV2AzWbPL7YSyp1f1Hn?usp=sharing)
+* [02-penguins-exercises.ipynb](https://colab.research.google.com/drive/16aOdFaUNQi5t-qhybd7D6iOyymxGp2Eb)
