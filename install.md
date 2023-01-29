@@ -61,6 +61,32 @@ conda remove --name myenv --all
 
 * [Remove an environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#removing-an-environment) -- conda.io
 
+## channels -- conda vs conda-forge
+
+* geospatial software has dependencies that can cause problems if you mix channels
+* see: [geopandas install](https://geopandas.org/en/stable/getting_started/install.html)
+* see also: [using multiple channels](https://conda-forge.org/docs/user/tipsandtricks.html#using-multiple-channels)
+* I use conda-forge, and this is an ENV.yml created from my base install...
+```
+$ conda env export --from-history>ENV.yml
+$ cat ENV.yml
+name: base
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - conda==22.11.1
+  - setuptools
+  - pip
+  - wheel
+  - conda-content-trust
+  - python.app
+  - geopandas
+  - contextily
+
+```
+
 ## conda basics
 
 You can use conda to create multiple environments with various installed libraries.
@@ -159,6 +185,25 @@ Detailed instructions for installing WSL and some other useful things...
   python --version
   ```
   which should return something like `Python 3.9.12`
+
+## My experience on a mac
+
+* For my old Intel Mac, I downloaded "Miniconda3 macOS Intel x86 64-bit bash"
+* Checked the hash with `shasum -a 256 ~/Downloads/Miniconda3-latest-MacOSX-x86_64.sh`
+* Followed the regular installation [here](https://conda.io/projects/conda/en/stable/user-guide/install/macos.html)
+* With the command: `bash Miniconda3-latest-MacOSX-x86_64.sh`
+  * When prompted with the following question:
+  ```
+  Do you wish the installer to initialize Miniconda3
+  by running conda init? [yes|no]
+  ```
+  * I responded with "yes" -- don't get impatient, because the default response is no
+* I opened a new terminal shell and my prompt began with "(base)" -- so the base environment was running
+* And I had python installed. `which python` returns `/Users/pbogden/miniconda3/bin/python`
+* And `python --version` returns `Python 3.10.8`
+
+  
+
 
 ## vscode terminal on Mac
 
