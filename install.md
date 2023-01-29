@@ -225,7 +225,7 @@ Detailed instructions for installing WSL and some other useful things...
 
 ## matplotlib on an old Mac
 
-* Problem: My terminal would occasionally hand on my laptop using an old version of the MacOS
+* Problem: My terminal would occasionally hang on my laptop using an old version of the MacOS
 * Solution: Add the following to `~/.zprofile` to avoid a hang with default backend
 
 ```
