@@ -121,11 +121,13 @@ $ git push origin main
 
 List files and directories that you want to keep out of git in a `.gitignore` file.
 
-* [To remove a file from a git history](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
-  * `git filter-repo` can be installed with `conda install -c conda-forge git-filter-repo`
+If you forget to put a file in .gitignore and you want to remove it from git...
+
 ```
 cd YOUR-REPOSITORY
 git filter-repo --invert-paths --path PATH-TO-YOUR-FILE
 git push origin --force --all
 git push origin --force --tags
 ```
+* [To remove a file from a git history](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
+* Note: `git filter-repo` can be installed with `conda install -c conda-forge git-filter-repo`
