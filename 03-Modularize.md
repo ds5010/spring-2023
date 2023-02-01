@@ -11,6 +11,10 @@
 * Polleverywhere: https://PollEv.com/pbogden
 * [Scratch notebook](https://colab.research.google.com/drive/1CIJAMn73A8ZvxzCgyjN7MGXT0W2BqUTq)
 
+## vscode and make
+
+* [vscode.md](vscode.md) shows how to make vscode behave like a text editor, which helps with Makefiles.
+
 ## Assignment
 
 * Check Canvas -- due 31 Jan
