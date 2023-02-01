@@ -58,3 +58,22 @@ It's probably not a good idea to change this file directly, but here's how it wo
   * Windows: this file is located in: C: > Users > p.bogden > AppData > Roaming > Code > User > settings.json
     * I inferred this from the GUI (seems that the > is supposed to be a substitute for \ and /)
   * Mac: this file is: ~/Library/Application Support/Code/User/settings.json
+
+## vscode terminal can't find my python?
+
+* My problem (on the mac): vscode's integrated terminal wasn't using my conda environment
+* The solution (fixed after navigating 7-layers down in the vscode GUI):
+* Find code->preference->setting->Features->Terminal->Integrated>Env:Osx
+* Choose edit in settings.json
+* Add the following
+```
+"terminal.integrated.env.osx": {  
+          "PATH": null
+ }
+```
+* Restart vscode (e.g., from the command line: vscode .) and `which python` is python in the conda environment
+* This worked, but I'm not sure why. I suspect there's an easier way, in which case I'd like to know what it is.
+
+## vscode (by microsoft) has trouble with mac in general
+
+* [Possible explanation?](https://youtu.be/0eEG5LVXdKo?t=637)
