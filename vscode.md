@@ -32,7 +32,7 @@ Various issues I've encountered with vscode (by microsoft).
     * Change "true" to "false" in this line:  "editor.insertSpaces": true,
 * There may be an easier way, in which case I'd like to know what it is.
 
-# settings.json
+## settings.json
 
 * Issue: vscode seems to be infinitely configurable
   * Only an issue when the GUI isn't obvious -- settings configuration has a bit of a learning curve
