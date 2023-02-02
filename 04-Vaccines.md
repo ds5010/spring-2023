@@ -93,8 +93,8 @@ Get a copy of the vaccines repo, review the workflow, update the result.
   * The GUI automatically offers to create a new fork in your personal account by the same name
   * Just press "Create fork" (green button) and it's done
 * Clone if you want to collaborate actively.
-  *...or if it's a repo that was assigned to you by github-classroom.
-  * If you're collaborating with yours, you'll need to worry about branches, pull requests, etc.
+  * ...or if it's a repo that was assigned to you by github-classroom.
+  * If you're collaborating with others, you'll need to worry about branches, pull requests, etc.
 * Community discussions
   * [What's the difference between forking and cloning on github?](https://stackoverflow.com/questions/7057194/what-is-the-difference-between-forking-and-cloning-on-github)
     * Q/A ranks -- 213/123 (highest ranking response isn't checked as the answer)
