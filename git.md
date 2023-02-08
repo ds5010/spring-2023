@@ -14,10 +14,10 @@ An opinionated set of references.
 ## install
 
 * If you have a mac, you may already have a version of git in `/usr/bin/git` that works with mac's keychain.
-* You can also [install git from conda-forge with conda](https://anaconda.org/conda-forge/git)
+* You can also [install git from conda-forge](https://anaconda.org/conda-forge/git)
   * I've started using this approach, but note that this version of git doesn't work with the keychain.
 * Official ref: [1.4 Getting Started -- The Command Line](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
-  * Other approaches: [1.5 Installing git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) -- git-scm.com
+  * Other install options: [1.5 Installing git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) -- git-scm.com
 
 ## authenticating
 
@@ -51,13 +51,13 @@ These tutorials are extensive. Some describe advanced usage of git and github th
 
 ## cloning a repo
 
-If you're authenticaing with personal access tokens, then clone with HTTPS with something like this...
+If you're authenticaing with personal access tokens, then cloning with HTTPS looks something like this...
 
 ```
 $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 ```
 
-If you're authenticating with SSH then use the alternate URL that looks like this...
+If you're authenticating with SSH then there's an alternate URL that looks like this...
 
 ```
 $ git clone git@github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
@@ -97,7 +97,7 @@ References:
 
 List files and directories that you want to keep out of git in a `.gitignore` file.
 
-If you forget to put a file in .gitignore and you want to remove it from git...
+If you forget to `.gitignore` a file and you want to remove it from git history, then it's a bit of a pain...
 
 ```
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
@@ -106,7 +106,12 @@ git filter-repo --invert-paths --path PATH-TO-YOUR-FILE
 git push origin --force --all
 git push origin --force --tags
 ```
+
+References:
+
 * [To remove a file from a git history](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
+* [`git filter-repo` is recommended by the git community](https://git-scm.com/docs/git-filter-branch#_warning) -- git-scm.com
+  * [it requires Python 3.5+ and git 2.22+](https://github.com/newren/git-filter-repo#prerequisites)
 * Note: `git filter-repo` can be installed with `conda install -c conda-forge git-filter-repo`
 
 ## update github 
@@ -155,26 +160,33 @@ Reference: [git-reset](https://git-scm.com/docs/git-reset) -- git-scm.com
 
 Branches allow you to develop outside the `main` branch.  This is good for experimenting and collaborating.
 
-* `$ git branch`
-  * list branches, including current branch
-  * default branch is usually "main"
-  * if you haven't created any branches, that'll be the only one
-* `$ git branch demo`
-  * create the "demo" branch
-* `$ git checkout demo`
-  * switch to the demo branch
+List branches, including current branch (which is preceded by an asterisk)
+```
+git branch
+```
+* default branch is usually "main", sometimes for older repos it's "master"
+* if you haven't created any branches, that'll be the only one
+
+Create a new branch called demo
+```
+git branch demo
+```
+
+Checkout the "demo" branch
+```
+git checkout demo
+```
+
+To merge changes made in a branch (an oversimplified example)
+```
+git checkout demo
+...make changes...
+git add .
+git commit -m "I made some wicked cool changes that are ready to merge into the main branch"
+git checkout main
+git merge demo
+```
 * You need to specify the upstream for the branch before you can "push" or "pull"
-* We're not going to be using the workflow for branches, at least not now.
-* To merge a branch
-  ```
-  $ git commit . -m "I made a such-and-such a change"
-  $ git checkout main
-  $ git merge demo
-  ```
-* To delete a branch after merging
-  * `$ git branch -d branch`
-* To delete a branch without merging
-  * `$ git branch -D branch`
 
 References: 
 
