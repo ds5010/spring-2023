@@ -21,24 +21,23 @@ Install miniconda on some version of Linux.
 VScode is a free visual text editor and an IDE (integrated dev environment) from microsoft.
 
 * https://code.visualstudio.com/download
+* it has issues, but they can usually be resolved
 
 ## Why miniconda?
 
-* Preface of [Python Data Science Handbook](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/00.00-Preface.ipynb) by Jake VanderPlas
-  * This link points to a Jupyter notebook on github, where you'll see a recommendation to use miniconda.
-  * The entire 1st edition (published in 2017) is available as Jupyter notebooks in this github repo.
-  * The 2nd edition (published in Dec 2022) has been modernized, but it's not freely available.
-  * In my opinion, the freely available github notebooks are still the preferred the way to go. Changes aren't big.
-* Section 1.4 of [Python for Data Analysis, 3rd Ed (2022)](https://wesmckinney.com/book/preliminaries.html#installation_and_setup) by Wes McKinney
-  * The author of Pandas also recommends miniconda
+* Recommended by Jake VanderPlas, the author of [Python Data Science Handbook (PDS)](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/00.00-Preface.ipynb)
+  * [This link](https://jakevdp.github.io/PythonDataScienceHandbook/00.00-preface.html#Installation-Considerations) points to a Jupyter notebook on github, where you'll see a recommendation to use miniconda.
+  * It's the first edition of the book, which was updated in 2022.  The more recent edition makes the same recommendation.
+* Recommended by Wes McKinney lead developer of Pandas and author or [Python for Data Analysis, 3rd Ed (2022)](https://wesmckinney.com)
+  * Section 1.4 of [Python for Data Analysis, 3rd Ed (2022)](https://wesmckinney.com/book/preliminaries.html#installation_and_setup) has the recommendation
 * [Conda myths and misconceptions](https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/)
   * This blog post by Jake VanderPlas comparing pip & conda is a bit old (2016) but still interesting/relevant
-* [using pip in an environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#using-pip-in-an-environment) -- conda.io
-  * best practices for using conda and pip
-* [managing conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) -- conda.io
-* [conda and pip](https://www.anaconda.com/blog/understanding-conda-and-pip) -- anaconda.com
+* Don't use pip. Or at least be careful about it.
+  * See: [Using pip in an environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#using-pip-in-an-environment) -- conda.io
+  * It discusses best practices for using conda and pip
+  * Another discussion of [conda and pip](https://www.anaconda.com/blog/understanding-conda-and-pip) -- anaconda.com
 
-## create an environment
+## Create an environment that has Python
 
 Create an environment with a specific version of python
 ```
@@ -49,46 +48,15 @@ Activate the environment and verify
 conda activate myenv
 python --version
 ```
+Deactivate the environment
+```
+conda deactivate
+```
 
 * [Manage environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) -- conda.io
   * [Creating an environment with commands](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands)
 
-## remove an environment
-
-```
-conda remove --name myenv --all
-```
-
-* [Remove an environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#removing-an-environment) -- conda.io
-
-## channels -- conda vs conda-forge
-
-* geospatial software has dependencies that can cause problems if you mix channels
-* see: [geopandas install](https://geopandas.org/en/stable/getting_started/install.html)
-* see also: [using multiple channels](https://conda-forge.org/docs/user/tipsandtricks.html#using-multiple-channels)
-* I use conda-forge, and this is an ENV.yml created from my base install...
-```
-$ conda env export --from-history>ENV.yml
-$ cat ENV.yml
-name: base
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - python=3.10
-  - conda==22.11.1
-  - setuptools
-  - pip
-  - wheel
-  - conda-content-trust
-  - python.app
-  - geopandas
-  - contextily
-  - pyqt
-prefix: /Users/pbogden/miniconda3
-```
-
-## conda basics
+## Conda basics
 
 You can use conda to create multiple environments with various installed libraries.
 
@@ -124,13 +92,79 @@ conda create --name newenv --file requirements.txt --channel conda-forge
 conda activate newenv
 ```
 
-* save an environment to ENV.yml
-```
-conda env export --from-history>ENV.yml
-```
-
 * [conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 * [conda cheatsheet](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf)
+
+## Remove an environment
+
+```
+conda remove --name myenv --all
+```
+
+* [Remove an environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#removing-an-environment) -- conda.io
+
+## Share an environment
+
+If you're using special software, or you need a specific version, then use 
+[conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) 
+and provide instructions with an `environment.yml` file.
+I created an environment.yml for this repo by first running this command
+```
+conda env export > environment.yml
+```
+Then I used the `--from-history` option to get hints on editing/trimming the file into something nice and short.
+```
+conda env export --from-history
+```
+I settled on this for my environment.yml...
+```
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - seaborn=0.11.2
+  - pyqt
+```
+Ref: [Sharing an environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#sharing-an-environment)
+
+## Create an environment from a yml file
+
+You can create an environment from a .yml file as follows:
+```
+conda env create --name myenv -f environment.yml
+```
+Remove an environment with:
+```
+conda env remove --name myenv
+```
+* Ref: [Creating an environment from an enviroment.yml file](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) -- conda.io
+
+## channels -- conda vs conda-forge
+
+* geospatial software has dependencies that can cause problems if you mix channels
+* see: [geopandas install](https://geopandas.org/en/stable/getting_started/install.html)
+* see also: [using multiple channels](https://conda-forge.org/docs/user/tipsandtricks.html#using-multiple-channels)
+* I use conda-forge, and this is an ENV.yml created from my base install...
+```
+$ conda env export --from-history>ENV.yml
+$ cat ENV.yml
+name: base
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - conda==22.11.1
+  - setuptools
+  - pip
+  - wheel
+  - conda-content-trust
+  - python.app
+  - geopandas
+  - contextily
+  - pyqt
+prefix: /Users/pbogden/miniconda3
+```
 
 ## WSL
 
@@ -203,9 +237,6 @@ Detailed instructions for installing WSL and some other useful things...
 * And I had python installed. `which python` returns `/Users/pbogden/miniconda3/bin/python`
 * And `python --version` returns `Python 3.10.8`
 
-  
-
-
 ## vscode terminal on Mac
 
 * The problem: vscode's integrated terminal wasn't using my conda environment
@@ -241,3 +272,26 @@ matplotlib.use('TkAgg')
 ```
 
 * [matplotlib backends](https://matplotlib.org/stable/users/explain/backends.html)
+
+### seaborn issue
+
+I encountered an issue on my older Mac.
+For some reason (python not installed as a framework?), plt.show() with seaborn hangs my terminal.
+Fix this by turning off interactive mode:
+```
+plt.ioff()
+```
+You can also fix this by using a different backend:
+```
+matplotlib.use('TkAgg')
+```
+List all the backends and the current backend with:
+```
+print(plt.get_backend())
+print(matplotlib.rcsetup.all_backends)
+```
+Or, to avoid using matplotlib, add the following to `~/.zprofile`:
+```
+# Avoids seaborn hang on my old macbook pro
+export MPLBACKEND=qtagg
+```
