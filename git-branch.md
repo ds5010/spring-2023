@@ -1,5 +1,5 @@
 
-# git merge
+# git branch
 
 * Step 1 -- create a branch
 ```
