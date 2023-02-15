@@ -17,6 +17,9 @@ Continue from last week
 ## Review homework solution
 
 * [hw3-seaborn-exercises](https://colab.research.google.com/drive/1FjUN8E7FBR0OfPXwGGnzlyiXDy0PX1TL)
+* References to add to those from last week...
+  * [04.00-Introduction-To-Matplotlib.ipynb](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/04.00-Introduction-To-Matplotlib.ipynb)
+    * Discusses "two interfaces for the price of one"
 
 ## Start collaborating on vaccines-3
 
