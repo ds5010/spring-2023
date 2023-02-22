@@ -7,7 +7,7 @@
 * Manipulating Non-tabular data
 * Geospatial data viz
 
-## class notes
+## Notebooks
 
 * [03-quakes-exercises.ipynb](https://colab.research.google.com/drive/1WhPHdKLk_cSDMJzkszrdgKotaKTYqpsa)
 * [07-observable-quakes-exercises.ipynb](https://colab.research.google.com/drive/1jvUE2VogJqS2IWHFD4RJpTUIdcfZlvME)
