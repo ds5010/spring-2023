@@ -25,7 +25,7 @@ Review progress on vaccines -- get students to discuss what happened.
 ## Part 2 -- GeoJSON & Earthquakes API
 
 * Introduce JSON
-  * GeoJSON with the [USGS earthquake API]https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
+  * GeoJSON with the [USGS earthquake API](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
 * Introduce [requests](https://docs.python-requests.org/en/latest/)
   * The 6-line intro demo is quite nice, it's worth reviewing it line by line
   * Shows how to parse a JSON response string
