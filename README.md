@@ -1,6 +1,7 @@
 
 # DS 5010 -- Spring 2023
 
+* [07-Quakes](07-Quakes.md) -- 22 & 24 Feb
 * [06-Collaborate2](06-Collaborate2.md) -- 15 & 17 Feb
 * [05-Collaborate](05-Collaborate.md) -- 8 & 10 Feb
 * [04-Vaccines](04-Vaccines.md) -- 1 & 3 Feb
