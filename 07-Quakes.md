@@ -10,7 +10,7 @@
 ## Notebooks
 
 * [03-quakes-exercises.ipynb](https://colab.research.google.com/drive/1WhPHdKLk_cSDMJzkszrdgKotaKTYqpsa)
-* [07-observable-quakes-exercises.ipynb](https://colab.research.google.com/drive/1jvUE2VogJqS2IWHFD4RJpTUIdcfZlvME)
+* [07-airports-exercises.ipynb](https://colab.research.google.com/drive/1NdXxLVCyJvarDysZru_smemJotWS9nxS)
 * [scratch-notebook.ipynb](https://colab.research.google.com/drive/1CIJAMn73A8ZvxzCgyjN7MGXT0W2BqUTq)
 * [polleverywhere site](http://pollev.com)
 
@@ -30,4 +30,3 @@ Review progress on vaccines -- get students to discuss what happened.
   * The 6-line intro demo is quite nice, it's worth reviewing it line by line
   * Shows how to parse a JSON response string
 * [03-quakes-exercises.ipynb](https://colab.research.google.com/drive/1WhPHdKLk_cSDMJzkszrdgKotaKTYqpsa)
-* [07-observable-quakes-exercises.ipynb](https://colab.research.google.com/drive/1jvUE2VogJqS2IWHFD4RJpTUIdcfZlvME)
