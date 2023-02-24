@@ -30,3 +30,5 @@ Review progress on vaccines -- get students to discuss what happened.
   * The 6-line intro demo is quite nice, it's worth reviewing it line by line
   * Shows how to parse a JSON response string
 * [03-quakes-exercises.ipynb](https://colab.research.google.com/drive/1WhPHdKLk_cSDMJzkszrdgKotaKTYqpsa)
+* [Python Data Viz -- Why so many libraries?](https://www.anaconda.com/blog/python-data-visualization-2018-why-so-many-libraries)
+* [07-airports-exercises.ipynb](https://colab.research.google.com/drive/1NdXxLVCyJvarDysZru_smemJotWS9nxS)
