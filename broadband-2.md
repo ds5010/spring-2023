@@ -18,8 +18,6 @@
 * [Purdue site](https://www.benton.org/source/purdue-university)
 * [Digital divide in the US](https://www.benton.org/headlines/digital-divide-us)
   * This page provides a quick overview of the societal problem
-  * I got the link to this site in an email from Meghan (Sep 2022)
-  * The recommendation for this site originated w/Maggie Drummond-Bahl -- colleague at MCA
 
 ## FCC Form 477 data
 
